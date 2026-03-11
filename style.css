@@ -3,8 +3,8 @@ html[data-theme="dark"] {
   --accent: #00e5a8;
   --bg: #212c39;
   --surface: #111827;
-  --text: rgba(255,255,255,.92);
-  --border: rgba(255,255,255,.10);
+  --text: rgba(255, 255, 255, .92);
+  --border: rgba(255, 255, 255, .10);
   --code-bg: #1e1e1e;
 }
 
@@ -13,14 +13,14 @@ html[data-theme="light"] {
   --accent: #00e5a8;
   --bg: #f6f7fb;
   --surface: #ffffff;
-  --text: rgba(15,23,42,.92);
-  --border: rgba(15,23,42,.10);
+  --text: rgba(15, 23, 42, .92);
+  --border: rgba(15, 23, 42, .10);
   --code-bg: #f8f9fa;
 }
 
-body { 
-  background-color: var(--bg); 
-  color: var(--text); 
+body {
+  background-color: var(--bg);
+  color: var(--text);
   transition: background-color 0.3s ease;
   font-family: 'Cabin Sketch', cursive;
 }
@@ -30,18 +30,18 @@ body {
   top: 0;
   z-index: 1020;
   backdrop-filter: blur(10px);
-  background: rgba(17,24,39,.85);
+  background: rgba(17, 24, 39, .85);
   border-bottom: 1px solid var(--border);
   padding: 12px 0;
 }
 
-.cardish { 
-  background: var(--surface); 
-  border: 1px solid var(--border); 
-  border-radius: 18px; 
-  padding: 25px; 
+.cardish {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 25px;
   margin-bottom: 25px;
-  box-shadow: 0 10px 30px rgba(0,0,0,.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .1);
 }
 
 .enunciado-box {
@@ -57,16 +57,30 @@ pre {
   overflow-x: auto;
 }
 
-.kw { color: #569cd6; }
-.ty { color: #4ec9b0; }
-.st { color: #ce9178; }
-.co { color: #6a9955; }
-.mt { color: #dcdcaa; }
+.kw {
+  color: #569cd6;
+}
+
+.ty {
+  color: #4ec9b0;
+}
+
+.st {
+  color: #ce9178;
+}
+
+.co {
+  color: #6a9955;
+}
+
+.mt {
+  color: #dcdcaa;
+}
 
 .step-badge {
   width: 32px;
   height: 32px;
-  background: rgba(0,229,168,.1);
+  background: rgba(0, 229, 168, .1);
   border: 1px solid var(--accent);
   color: var(--accent);
   border-radius: 8px;
@@ -91,7 +105,7 @@ pre {
 }
 
 .control-item {
-  background: rgba(255,255,255,0.05);
+  background: rgba(255, 255, 255, 0.05);
   padding: 8px 12px;
   border-radius: 8px;
   border: 1px solid var(--border);
@@ -103,9 +117,9 @@ pre {
   top: 0;
   z-index: 1000;
   backdrop-filter: blur(10px);
-  background: rgba(15,23,42,0.95);
+  background: rgba(15, 23, 42, 0.95);
   padding: 10px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .custom-menu .nav-link {
@@ -124,7 +138,8 @@ pre {
 }
 
 .profile-header {
-  margin-top: 0px; /* espacio si tienes navbar fija */
+  margin-top: 0px;
+  /* espacio si tienes navbar fija */
 }
 
 .profile-container {
@@ -132,7 +147,8 @@ pre {
   align-items: center;
   justify-content: center;
   gap: 25px;
-  flex-wrap: wrap; /* para que en celular se acomode */
+  flex-wrap: wrap;
+  /* para que en celular se acomode */
 }
 
 .profile-img {
