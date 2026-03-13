@@ -1,3 +1,5 @@
+// CAMBIO DE TEMA OSCURO Y BLANCO
+
 document.addEventListener("DOMContentLoaded", () => {
 
     const themeToggle = document.getElementById('themeToggle');
@@ -13,10 +15,10 @@ document.addEventListener("DOMContentLoaded", () => {
             html.setAttribute('data-theme', newTheme);
             html.setAttribute('data-bs-theme', newTheme);
             if (icon) {
-              icon.className = newTheme === 'dark'
-              ? 'bi bi-sun'
-              : 'bi bi-moon-stars';
-}
+                icon.className = newTheme === 'dark'
+                    ? 'bi bi-sun'
+                    : 'bi bi-moon-stars';
+            }
         },
         irASeccion: function (id) {
             const seccion = document.getElementById(id);
@@ -30,63 +32,62 @@ document.addEventListener("DOMContentLoaded", () => {
         themeToggle.addEventListener("click", () => UI.alternarColor());
     }
 
-
-    async function cargarProyectos() {
-        try {
-
-            const response = await fetch("https://api.github.com/users/Supereld06/repos");
-
-            if (!response.ok) {
-                throw new Error("Error al cargar los proyectos");
-            }
-
-            const proyectos = await response.json();
-            const contenedor = document.getElementById("contenedor-proyectos");
-
-            if (!contenedor) return;
-
-            contenedor.innerHTML = "";
-
-            // Opcional: filtrar forks
-            const proyectosFiltrados = proyectos.filter(p => !p.fork);
-
-            proyectosFiltrados.forEach(proyecto => {
-                contenedor.innerHTML += `
-                    <div class="col-md-4 mb-4">
-                        <div class="project-card p-3 shadow-sm rounded h-100">
-                            <h5 class="fw-bold">${proyecto.name}</h5>
-                            <p>${proyecto.description || "Sin descripción"}</p>
-                            <a href="${proyecto.html_url}" target="_blank" class="btn btn-sm btn-accent">
-                                Ver en GitHub
-                            </a>
-                        </div>
-                    </div>
-                `;
-            });
-
-        } catch (error) {
-            console.error("Error:", error);
-        }
-    }
-
-    cargarProyectos();
-
 });
 
-// Manejo de eventos para las tarjetas de proyectos
 
-/*const contenedor = document.getElementById("contenedor-proyectos");
+// FORMULARIO DE CONTACTO USO DE (Formspree)
 
-if (contenedor) {
-    contenedor.addEventListener("click", function (evento) {
-        const tarjeta = evento.target.closest(".project-card");
+const form = document.getElementById("contact-form");
+const status = document.getElementById("form-status");
+const button = document.getElementById("submit-btn");
+const text = document.getElementById("btn-text");
 
-        if (tarjeta) {
+async function handleSubmit(event) {
 
-            const titulo = tarjeta.querySelector("h5")?.innerText;
+    event.preventDefault();
 
-            alert("Haz hecho clic en un proyecto: " + titulo);
+    const data = new FormData(form);
+
+    text.innerText = "Enviando...";
+    button.disabled = true;
+
+    try {
+
+        const response = await fetch(form.action, {
+            method: form.method,
+            body: data,
+            headers: {
+                'Accept': 'application/json'
+            }
+        });
+
+        if (response.ok) {
+
+            status.innerHTML = "✅ Mensaje enviado correctamente. Gracias por contactarme.";
+            status.style.color = "green";
+
+            form.reset();
+
+        } else {
+
+            status.innerHTML = "❌ Ocurrió un error. Intenta nuevamente.";
+            status.style.color = "red";
+
         }
-    });
-}*/
+
+    } catch (error) {
+
+        status.innerHTML = "❌ Error al enviar el formulario.";
+        status.style.color = "red";
+
+    }
+
+    text.innerText = "Enviar mensaje";
+    button.disabled = false;
+
+}
+
+if (form) {
+    form.addEventListener("submit", handleSubmit);
+}
 

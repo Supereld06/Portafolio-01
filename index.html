@@ -29,7 +29,7 @@
         <li class="nav-item"><a class="nav-link" href="#sobre">Sobre mí</a></li>
         <li class="nav-item"><a class="nav-link" href="#habilidades">Habilidades</a></li>
         <li class="nav-item"><a class="nav-link" href="#proyectos">Proyectos</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contactos">Contacto</a></li>
       </ul>
 
       <!-- Botón tema -->
@@ -186,17 +186,6 @@
       </div>
     </section>
 
-    <!--
-<section id="proyectos" class="cardish enunciado-box">
-  <h4 class="fw-bold mb-4">
-    <i class="bi bi-briefcase me-2"></i>Proyectos
-  </h4>
-
-  <div id="contenedor-proyectos" class="row text-center">
-    
-  </div>
-</section>-->
-
     <section id="proyectos" class="cardish enunciado-box">
       <h4 class="fw-bold mb-4">
         <i class="bi bi-briefcase me-2"></i>Proyectos
@@ -218,10 +207,11 @@
             </p>
 
             <div class="tech-logos">
-              <span style="color: #00e5a8;">Tecnologias: </span>
               <img src="img/skills/laravel.png" alt="Laravel">
               <img src="img/skills/mysql.png" alt="MySQL">
               <img src="img/skills/bootstrap.png" alt="Bootstrap">
+              <img src="img/skills/html.png" alt="HTML">
+              <img src="img/skills/css.png" alt="CSS">
             </div>
           </div>
         </div>
@@ -240,7 +230,7 @@
             </p>
 
             <div class="tech-logos">
-              <img src="img/skills/php.png" alt="PHP">
+              <img src="img/skills/laravel.png" alt="Laravel">
               <img src="img/skills/mysql.png" alt="MySQL">
               <img src="img/skills/javascript.png" alt="JS">
             </div>
@@ -249,17 +239,17 @@
 
         <div class="col-md-4 mb-5">
           <div class="project-card">
-            <img src="img/projects/proyecto3.jpg" alt="Proyecto 3" class="project-img">
+            <img src="img/projects/prefweb.PNG" alt="Proyecto 3" class="project-img">
 
-            <h5 class="fw-bold mt-3">Resolución Gauss-Jordan</h5>
+            <h5 class="fw-bold mt-3">Pagina Web Preforsa</h5>
 
             <p class="project-desc">
-              Aplicación en C# para resolver matrices utilizando el método Gauss-Jordan paso a paso.
+              Pagina web corporativa para la empresa Preforsa, con secciones de servicios, contactos, ubicacion.
             </p>
 
             <div class="tech-logos">
-              <img src="img/skills/csharp.png" alt="C#">
-              <img src="img/skills/dotnet.png" alt=".NET">
+              <img src="img/skills/html.png" alt="HTML">
+              <img src="img/skills/css.png" alt="CSS">
             </div>
           </div>
         </div>
@@ -275,7 +265,7 @@
               <h5 class="fw-bold mt-3">Sistema Mantenimiento Preforsa</h5>
 
               <p class="project-desc">
-                Sisitema de Informacion para la gestion de mantenimiento de maquinaria pesada, con control de ordenes,
+                Sistema de Informacion para la gestion de mantenimiento de maquinaria pesada, con control de ordenes,
                 historial y reportes.
               </p>
 
@@ -347,7 +337,8 @@
 
           <div class="contact-item">
             <i class="bi bi-github"></i>
-            <a href="https://github.com/" target="_blank">
+            <a href="https://www.linkedin.com/in/econdorcet06?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B64b7ZnSoRXKad7lGbJm4qQ%3D%3D"
+              target="_blank">
               GitHub
             </a>
           </div>
@@ -366,32 +357,39 @@
 
         </div>
 
-        <!-- COLUMNA 2 - Formulario -->
         <div class="col-md-7">
 
-          <form class="contact-form">
+          <form id="contact-form" action="https://formspree.io/f/mwvrqkrn" method="POST">
 
             <div class="mb-3">
-              <input type="text" class="form-control" placeholder="Nombre completo" required>
+              <input type="text" name="nombre" class="form-control" placeholder="Nombre completo" required>
             </div>
 
             <div class="mb-3">
-              <input type="email" class="form-control" placeholder="Correo electrónico" required>
+              <input type="email" name="email" class="form-control" placeholder="Correo electrónico" required>
             </div>
 
             <div class="mb-3">
-              <textarea class="form-control" rows="4" placeholder="Escribe tu mensaje..." required></textarea>
+              <textarea name="mensaje" class="form-control" rows="4" placeholder="Escribe tu mensaje..."
+                required></textarea>
             </div>
 
-            <button type="submit" class="btn btn-accent">
-              <i class="bi bi-send me-2"></i>Enviar mensaje
+            <!-- asunto del correo -->
+            <input type="hidden" name="_subject" value="Nuevo mensaje desde mi portafolio">
+
+            <!-- anti spam -->
+            <input type="text" name="_honey" style="display:none">
+
+            <button id="submit-btn" type="submit" class="btn btn-accent">
+              <i class="bi bi-send me-2"></i>
+              <span id="btn-text">Enviar mensaje</span>
             </button>
+
+            <p id="form-status" style="margin-top:15px;"></p>
 
           </form>
 
         </div>
-
-      </div>
     </section>
 
     <footer class="text-center opacity-50 small mt-4">

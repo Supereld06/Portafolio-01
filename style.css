@@ -339,6 +339,10 @@ pre {
   padding: 8px 20px;
 }
 
+section {
+  scroll-margin-top: 100px;
+}
+
 /* ===== RESPONSIVE MÓVIL ===== */
 @media (max-width: 576px) {
 
